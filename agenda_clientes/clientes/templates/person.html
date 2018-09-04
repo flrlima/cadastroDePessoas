@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load filtros %}
+{% load static %}
+{% load my_tags %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col">
+
+        </div>
+
+        <div class="col-8">
+            <h3>Listagem de Clientes</h3>
+            <ul class="list-group">
+                {% for pessoa in lista_de_pessoas %}
+                    <li class="list-group-item">
+                        <a href="{% url 'person_update' pessoa.id %}">{{ pessoa }}</a>
+                        <a href="{% url 'person_delete' pessoa.id %}" class="trash-item">
+                            <i class="fa fa-trash" arial-fidden="true"></i>
+                            <!--<span class="glyphicon-trash"></span>-->
+                        </a>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item">
+                        Você não possui nenhum contato.
+                    </li>
+                {% endfor %}
+            </ul>
+            <br>
+            <a href="{% url 'person_new' %}" class="btn btn-outline-primary">Novo Cliente</a>
+        </div>
+
+        <div class="col">
+            {% if user.is_authenticated %}
+            <p>Olá {{ user.username }}
+                <a href="{% url 'my_logout' %}" >
+                    <span class="badge badge-dark">Sair</span>
+                </a>
+            </p>
+            {% endif %}
+        </div>
+
+    </div><br>
+
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

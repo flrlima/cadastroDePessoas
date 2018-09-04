@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Person Detail</title>
+</head>
+<body>
+
+    <h1>Person Detail Teste</h1>
+    <h2>Pessoa Detail List</h2>
+    Nome: {{ object.first_name }}<br>
+    Sobrenome: {{ object.last_name }}<br>
+    Idade: {{ object.age }}<br>
+    Salário: {{ object.salary }}<br><br>
+
+    Data: {{ now|date }}<br><br>
+
+    <a href="{% url 'person_list_cbv' %}">Voltar</a> | <a href="{% url 'person_update_cbv' object.pk %}">Editar</a>
+    | <a href="{% url 'person_delete_cbv' object.pk %}">Deletar</a>
+
+</body>
+</html>

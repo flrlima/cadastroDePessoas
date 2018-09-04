@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Seja Bem Vindo... {% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col">
+        <a href="{% url 'person_list' %}" class="btn btn-outline-primary">Ver Clientes</a>
+    </div>
+
+    <div class="col-6">
+      <h3>Home</h3>
+    </div>
+    {{ resultado }}
+    <div class="col">
+        {% if user.is_authenticated %}
+            <p>Olá {{ user.username }}
+                <a href="{% url 'my_logout' %}" class="btn btn-outline-info">Sair</a>
+            </p>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-info">Entrar</a>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

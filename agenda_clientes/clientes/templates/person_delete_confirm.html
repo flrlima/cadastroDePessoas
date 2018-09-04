@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}{% load static %}
+
+{% block title %}Confirmar exclusão{% endblock %}
+
+{% block main %}
+    <h1>Ter certeza que deseja excluir o usuário </h1>
+    <h2>{{ person }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Apagar</button>
+    </form>
+{% endblock %}
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

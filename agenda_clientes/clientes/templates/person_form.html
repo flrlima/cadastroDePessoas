@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load static %}{% load static %}
+
+{% block title %}Clientes{% endblock %}
+
+        {% block main %}
+            <div class="jumbotron">
+                <h3>Novo Cliente</h3>
+                    <!--<form action="{% url 'person_new' %}" method="POST" enctype="multipart/form-data">-->
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|bootstrap }}
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+        {% endblock %}

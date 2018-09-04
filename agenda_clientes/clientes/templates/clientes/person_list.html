@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Person List</title>
+</head>
+<body>
+
+    <h1>Person List Teste</h1>
+    <h2>Listagem de Pessoas</h2>
+    <ul>
+        {% for person in object_list %}
+            <li><a href="{% url 'person_detail_cbv' person.pk %}">{{ person }} {{ person.age }}</a></li>
+        {% endfor %}
+    </ul>
+    <br><br>
+
+    <a href="{% url 'person_create_cbv' %}">Novo</a>
+
+</body>
+</html>
