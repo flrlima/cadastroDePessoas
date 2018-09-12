@@ -1,5 +1,6 @@
 # Simples Cadastro de Pessoas Funcional 
 ## https://agenda-clientes2.herokuapp.com/
+### com o link acima pode navegar na aplicação
 
 Objetivo principal foi iniciar com Python 3 e Django 2, e hospedar no heroku, usando o banco PostgreSQL. O sistema basicamente tem um crud totalmente funcional e simples de codificar devido as facilidades disponibilizadas pelo fremwork.
 Para iniciar basta clicar na url diponibilizada acima, pois a mesma direciona para a aplicação que está totalmente funcional.
